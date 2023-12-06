@@ -1,0 +1,10 @@
+entity:
+    sprite
+
+operasi:
+    crud sprite
+
+sprite menu:
+    tambah
+    hapus
+    property
