@@ -1,5 +1,5 @@
 namespace ha.s3d {
-    export class P2d {
+    class P2d {
         private _x: number = 0;
         public get x(): number {
             return this._x;
@@ -16,7 +16,7 @@ namespace ha.s3d {
         }
     }
 
-    export class P3d {
+    class P3d {
         private _x: number = 0;
         private _y: number = 0;
         private _z: number = 0;
@@ -42,7 +42,7 @@ namespace ha.s3d {
         }
     }
 
-    export class Sprite {
+    export class SpriteObj {
         private _z3d: number = 0;
         private _x3d: number = 0;
         private _y3d: number = 0;
@@ -146,7 +146,32 @@ namespace ha.s3d {
             this.update();
         }
 
+    }
 
+    export class Sprite {
+        private static readonly list: SpriteObj[] = [];
+
+        static buat(x: number, y: number, z: number, w: number, h: number): SpriteObj {
+            let hs = new SpriteObj(x, y, z, w, h);
+
+            Sprite.list.push(hs);
+
+            return hs;
+        }
+
+        static hapus(s: SpriteObj) {
+            for (let i: number = 0; i < this.list.length; i++) {
+                if (this.list[i] == s) {
+                    this.list.splice(i, 1);
+                }
+            }
+        }
+
+        static urut(): void {
+            this.list.sort((i, j) => {
+                return i.z3d - j.z3d;
+            });
+        }
     }
 
     export class Transform {
