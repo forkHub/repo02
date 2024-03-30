@@ -1,0 +1,14 @@
+kotak => terdiri dari plane
+klik => ada plane di klik => buat kotak sebelahnya
+
+struktur:
+    kotak -> plane -> orientasi -> atas, bawah, kiri, kanan, depan, belakang
+
+
+test:
+    apakah ada plane di klik
+    apakah plane bagian dari kotak
+
+filtering
+    kotak -> kanan ada -> hapus/sembunyikan plane kanan
+          -> kiri ada  -> hapus/sembunyikan plane kiri
